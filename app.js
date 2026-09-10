@@ -18,10 +18,16 @@ const DEFAULT_LINKS = {
     { id: 's1', name: '𝗡Λ𝗜𝗟𝗢𝗡𝗚々𝗝𝗢𝗞𝗜 𝗘𝗟𝗜𝗧𝗘 | SL¹', desc: 'Saluran info, promo & pengumuman 1', url: 'https://whatsapp.com/channel/example1', badge: 'SL', badgeClass: 'sl', verified: false },
     { id: 's2', name: '𝗡Λ𝗜𝗟𝗢𝗡𝗚々𝗝𝗢𝗞𝗜 𝗘𝗟𝗜𝗧𝗘 | SL²', desc: 'Saluran info, promo & pengumuman 2', url: 'https://whatsapp.com/channel/example2', badge: 'SL', badgeClass: 'sl', verified: false },
     { id: 's3', name: 'Website Nailong', desc: 'Website resmi Nailong Joki Elite', url: 'https://nailongjoki.vercel.app', badge: '', badgeClass: '', verified: false, icon: 'globe' }
+  ],
+  sosmed: [
+    { id: 'sm1', name: 'Instagram', desc: 'Follow Instagram resmi Nailong Joki', url: 'https://instagram.com/nailongjoki', badge: 'IG', badgeClass: 'custom', verified: false, icon: 'instagram' },
+    { id: 'sm2', name: 'TikTok', desc: 'Follow TikTok resmi Nailong Joki', url: 'https://tiktok.com/@nailongjoki', badge: 'TT', badgeClass: 'custom', verified: false, icon: 'tiktok' },
+    { id: 'sm3', name: 'YouTube', desc: 'Subscribe channel YouTube Nailong', url: 'https://youtube.com/@nailongjoki', badge: 'YT', badgeClass: 'custom', verified: false, icon: 'youtube' },
+    { id: 'sm4', name: 'Telegram', desc: 'Join channel Telegram resmi', url: 'https://t.me/nailongjoki', badge: 'TG', badgeClass: 'custom', verified: false, icon: 'telegram' }
   ]
 };
 
-const STORAGE_KEY = 'nailong_links_v1';
+const STORAGE_KEY = 'nailong_links_v2';
 
 // ===================== STATE =====================
 let links = loadLinks();
@@ -41,12 +47,13 @@ function saveLinks() {
 
 // ===================== RENDER =====================
 function renderLinks() {
-  ['admin', 'jb', 'saluran'].forEach(tab => {
+  ['admin', 'jb', 'saluran', 'sosmed'].forEach(tab => {
     const container = document.getElementById(`list-${tab}`);
     if (!container) return;
 
     const items = links[tab] || [];
-    document.querySelector(`.tab-btn[data-tab="${tab}"] .count`).textContent = `${items.length} LINK`;
+    const countEl = document.querySelector(`.tab-btn[data-tab="${tab}"] .count`);
+    if (countEl) countEl.textContent = `${items.length} LINK`;
 
     if (items.length === 0) {
       container.innerHTML = `<p style="text-align:center;color:var(--text-muted);padding:20px;font-size:13px;">Belum ada link. Klik tombol + untuk menambah.</p>`;
@@ -54,11 +61,8 @@ function renderLinks() {
     }
 
     container.innerHTML = items.map(item => {
-      const iconHtml = item.icon === 'globe'
-        ? '<i class="fa-solid fa-globe"></i>'
-        : item.icon === 'info'
-          ? '<i class="fa-solid fa-circle-info"></i>'
-          : '<img src="logo.jpg" alt="">';
+      // Semua bulatan pakai foto logo
+      const iconHtml = '<img src="logo.jpg" alt="">';
 
       const verifiedHtml = item.verified
         ? `<img src="secure.gif" alt="verified" style="width:16px;height:16px;vertical-align:middle;">`
@@ -103,15 +107,12 @@ function initTabs() {
 
 // ===================== ADD LINK =====================
 function openAddModal() {
-  document.getElementById('addModal').classList.add('show');
-  document.getElementById('linkName').value = '';
-  document.getElementById('linkDesc').value = '';
-  document.getElementById('linkUrl').value = '';
-  document.getElementById('linkBadge').value = '';
+  // Fitur tambah dinonaktifkan
+  return;
 }
 
 function closeAddModal() {
-  document.getElementById('addModal').classList.remove('show');
+  return;
 }
 
 function addLink() {
@@ -183,6 +184,7 @@ function resetLinks() {
 // ===================== TOAST =====================
 function showToast(msg) {
   const t = document.getElementById('toast');
+  if (!t) return;
   t.textContent = msg;
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 2200);
