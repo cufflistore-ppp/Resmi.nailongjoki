@@ -1,29 +1,23 @@
 // ===================== DATA =====================
 const DEFAULT_LINKS = {
   admin: [
-    { id: 'a1', name: 'WA NAILONG 1', desc: 'Chat admin utama Nailong Joki Elite', url: 'https://wa.me/6280000000000', badge: 'ADMIN', badgeClass: '', verified: true },
-    { id: 'a2', name: 'WA NAILONG 2', desc: 'Chat admin backup Nailong Joki Elite', url: 'https://wa.me/6280000000001', badge: 'ADMIN', badgeClass: '', verified: true },
-    { id: 'a3', name: 'WA CS / LAPORAN', desc: 'Bantuan customer service & laporan', url: 'https://wa.me/6280000000002', badge: 'CS', badgeClass: 'cs', verified: false },
-    { id: 'a4', name: 'WA ORDER FS', desc: 'Chat admin untuk order Video FS', url: 'https://wa.me/6280000000003', badge: 'FS', badgeClass: 'fs', verified: false },
-    { id: 'a5', name: 'Website Resmi', desc: 'nailongjoki.vercel.app · Order resmi', url: 'https://nailongjoki.vercel.app', badge: '', badgeClass: '', verified: false, icon: 'globe' },
-    { id: 'a6', name: 'Tentang Nailong', desc: 'Info layanan & cara order', url: 'https://nailongjoki.vercel.app/tentang.html', badge: '', badgeClass: '', verified: false, icon: 'info' }
+    { id: 'a1', name: 'WA Cs¹', desc: 'Chat admin utama 𝗡Λ𝗜𝗟𝗢𝗡𝗚々𝗝𝗢𝗞𝗜 𝗘𝗟𝗜𝗧𝗘', url: 'https://wa.me/6285196454388', badge: 'ADMIN Cs¹', badgeClass: '', verified: true },
+    { id: 'a2', name: 'WA Cs²', desc: 'Chat admin backup 𝗡Λ𝗜𝗟𝗢𝗡𝗚々𝗝𝗢𝗞𝗜 𝗘𝗟𝗜𝗧𝗘', url: 'https://wa.me/6285745850498', badge: 'ADMIN Cs²', badgeClass: '', verified: true },
+    { id: 'a3', name: 'WA LAPOR ORDERAN BERMASALAH', desc: 'Bantuan customer service & laporan', url: 'https://wa.me/6280000000002', badge: 'Admin laporan', badgeClass: 'cs', verified: false },
+    { id: 'a5', name: 'Website Resmi', desc: 'nailongjoki.vercel.app · Order resmi', url: 'https://nailongjoki.vercel.app', badge: '', badgeClass: '', verified: false, icon: 'globe' }
   ],
   jb: [
-    { id: 'j1', name: '𝗡Λ𝗜𝗟𝗢𝗡𝗚々𝗝𝗢𝗞𝗜 𝗘𝗟𝗜𝗧𝗘 | JB¹', desc: 'Grup jual beli & info order Nailong 1', url: 'https://chat.whatsapp.com/example1', badge: 'JB', badgeClass: 'jb', verified: false },
-    { id: 'j2', name: '𝗡Λ𝗜𝗟𝗢𝗡𝗚々𝗝𝗢𝗞𝗜 𝗘𝗟𝗜𝗧𝗘 | JB²', desc: 'Grup jual beli & info order Nailong 2', url: 'https://chat.whatsapp.com/example2', badge: 'JB', badgeClass: 'jb', verified: false },
-    { id: 'j3', name: 'JB NAILONG ELITE 3', desc: 'Grup jual beli Nailong Joki 3', url: 'https://chat.whatsapp.com/example3', badge: 'JB', badgeClass: 'jb', verified: false },
-    { id: 'j4', name: 'JB NAILONG X PARTNER', desc: 'Grup partner & kolaborasi', url: 'https://chat.whatsapp.com/example4', badge: 'JB', badgeClass: 'jb', verified: false }
+    { id: 'j1', name: '𝗡Λ𝗜𝗟𝗢𝗡𝗚々𝗝𝗢𝗞𝗜 𝗘𝗟𝗜𝗧𝗘 | JB¹', desc: 'Grup jual beli & info order Nailong jb1', url: 'https://chat.whatsapp.com/CpxBuLPtoui0jbonQxXIsQ?s=cl&p=a&mlu=4&ilr=4', badge: 'JB', badgeClass: 'jb', verified: false },
+    { id: 'j2', name: '𝗡Λ𝗜𝗟𝗢𝗡𝗚々𝗝𝗢𝗞𝗜 𝗘𝗟𝗜𝗧𝗘 | JB²', desc: 'Grup jual beli & info order Nailong jb2', url: 'https://chat.whatsapp.com/JT704ttX54jCjfpB4RL8MY', badge: 'JB', badgeClass: 'jb', verified: false }
   ],
   saluran: [
-    { id: 's1', name: '𝗡Λ𝗜𝗟𝗢𝗡𝗚々𝗝𝗢𝗞𝗜 𝗘𝗟𝗜𝗧𝗘 | SL¹', desc: 'Saluran info, promo & pengumuman 1', url: 'https://whatsapp.com/channel/example1', badge: 'SL', badgeClass: 'sl', verified: false },
-    { id: 's2', name: '𝗡Λ𝗜𝗟𝗢𝗡𝗚々𝗝𝗢𝗞𝗜 𝗘𝗟𝗜𝗧𝗘 | SL²', desc: 'Saluran info, promo & pengumuman 2', url: 'https://whatsapp.com/channel/example2', badge: 'SL', badgeClass: 'sl', verified: false },
+    { id: 's1', name: '𝗡Λ𝗜𝗟𝗢𝗡𝗚々𝗝𝗢𝗞𝗜 𝗘𝗟𝗜𝗧𝗘 | SL¹', desc: 'Saluran info, promo & pengumuman 1', url: 'https://chat.whatsapp.com/JT704ttX54jCjfpB4RL8MY', badge: 'SL', badgeClass: 'sl', verified: false },
+    { id: 's2', name: '𝗡Λ𝗜𝗟𝗢𝗡𝗚々𝗝𝗢𝗞𝗜 𝗘𝗟𝗜𝗧𝗘 | SL²', desc: 'Saluran info, promo & pengumuman 2', url: 'https://whatsapp.com/channel/0029Vb8bkdq4IBh6mtdFxG18', badge: 'SL', badgeClass: 'sl', verified: false },
     { id: 's3', name: 'Website Nailong', desc: 'Website resmi Nailong Joki Elite', url: 'https://nailongjoki.vercel.app', badge: '', badgeClass: '', verified: false, icon: 'globe' }
   ],
   sosmed: [
     { id: 'sm1', name: 'Instagram', desc: 'Follow Instagram resmi Nailong Joki', url: 'https://instagram.com/nailongjoki', badge: 'IG', badgeClass: 'custom', verified: false, icon: 'instagram' },
-    { id: 'sm2', name: 'TikTok', desc: 'Follow TikTok resmi Nailong Joki', url: 'https://tiktok.com/@nailongjoki', badge: 'TT', badgeClass: 'custom', verified: false, icon: 'tiktok' },
-    { id: 'sm3', name: 'YouTube', desc: 'Subscribe channel YouTube Nailong', url: 'https://youtube.com/@nailongjoki', badge: 'YT', badgeClass: 'custom', verified: false, icon: 'youtube' },
-    { id: 'sm4', name: 'Telegram', desc: 'Join channel Telegram resmi', url: 'https://t.me/nailongjoki', badge: 'TG', badgeClass: 'custom', verified: false, icon: 'telegram' }
+    { id: 'sm2', name: 'TikTok', desc: 'Follow TikTok resmi Nailong Joki', url: 'https://tiktok.com/@nailongjoki', badge: 'TT', badgeClass: 'custom', verified: false, icon: 'tiktok' }
   ]
 };
 
