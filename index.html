@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Nailong Joki Elite | WA Admin, Grup JB & Saluran Resmi</title>
+  <meta name="description" content="WA admin, grup JB amanah, saluran resmi Nailong Joki Elite. Hindari akun & link tidak resmi.">
+  <link rel="icon" href="logo.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loading">
+    <div class="loading-logo"><img src="logo.jpg" alt="Nailong Joki"></div>
+    <div class="loading-text">LOADING</div>
+    <div class="loading-title">Selamat datang</div>
+    <div class="loading-sub">
+      Nailong Joki
+      <img class="verified" src="secure.gif" alt="verified" style="width:18px;height:18px;">
+    </div>
+    <div class="dots"><span></span><span></span><span></span></div>
+    <div class="progress-bar"><div class="progress-fill"></div></div>
+  </div>
+
+  <!-- Main App -->
+  <div id="app">
+    <div class="header">
+      <div class="avatar"><img src="logo.jpg" alt="Nailong Joki"></div>
+      <div class="brand">
+        Nailong Joki
+        <span class="verified"><img src="secure.gif" alt="verified"></span>
+      </div>
+      <div class="tagline">Pusat Layanan <span>Nailong Joki Elite</span></div>
+      <p class="desc">
+        WA admin, grup JB amanah, saluran resmi, dan link resmi Nailong Joki Elite ada di sini. Hindari akun & link tidak resmi.
+      </p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="admin">
+        <span class="icon"><i class="fa-solid fa-comment"></i></span>
+        <span>WA Admin</span>
+        <span class="count">0 LINK</span>
+      </button>
+      <button class="tab-btn" data-tab="jb">
+        <span class="icon"><i class="fa-solid fa-users"></i></span>
+        <span>Grup JB</span>
+        <span class="count">0 LINK</span>
+      </button>
+      <button class="tab-btn" data-tab="saluran">
+        <span class="icon"><i class="fa-solid fa-bullhorn"></i></span>
+        <span>Saluran</span>
+        <span class="count">0 LINK</span>
+      </button>
+    </div>
+
+    <!-- WA Admin -->
+    <div class="section active" id="admin">
+      <div class="section-title"><i class="fa-solid fa-comment"></i> WA Admin · Nomor admin, CS, dan website resmi</div>
+      <div id="list-admin"></div>
+    </div>
+
+    <!-- Grup JB -->
+    <div class="section" id="jb">
+      <div class="section-title"><i class="fa-solid fa-users"></i> Grup JB · Semua grup jual beli Nailong Joki</div>
+      <div id="list-jb"></div>
+    </div>
+
+    <!-- Saluran -->
+    <div class="section" id="saluran">
+      <div class="section-title"><i class="fa-solid fa-bullhorn"></i> Saluran · Info, promo & pengumuman resmi</div>
+      <div id="list-saluran"></div>
+    </div>
+
+    <div class="footer">
+      <div class="verified-badge">
+        <i class="fa-solid fa-shield-halved"></i> Link resmi & terverifikasi
+      </div>
+      <div class="copyright">
+        © 2026 Nailong Joki Elite. All rights reserved.<br>
+        Order hanya melalui website resmi · <a href="https://nailongjoki.vercel.app" target="_blank">nailongjoki.vercel.app</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Buttons -->
+  <button class="fab" id="addBtn" onclick="openAddModal()" title="Tambah Link">
+    <i class="fa-solid fa-plus"></i>
+  </button>
+
+  <!-- Modal Tambah Link -->
+  <div class="modal-overlay" id="addModal">
+    <div class="modal">
+      <h3><i class="fa-solid fa-plus-circle"></i> Tambah Link / Grup</h3>
+
+      <div class="form-group">
+        <label>Kategori</label>
+        <select id="linkCategory">
+          <option value="admin">WA Admin</option>
+          <option value="jb">Grup JB</option>
+          <option value="saluran">Saluran</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Nama Link</label>
+        <input type="text" id="linkName" placeholder="Contoh: WA NAILONG 3">
+      </div>
+
+      <div class="form-group">
+        <label>Deskripsi</label>
+        <input type="text" id="linkDesc" placeholder="Contoh: Chat admin backup">
+      </div>
+
+      <div class="form-group">
+        <label>URL / Link</label>
+        <input type="url" id="linkUrl" placeholder="https://wa.me/62... atau chat.whatsapp.com/...">
+      </div>
+
+      <div class="form-group">
+        <label>Badge (opsional)</label>
+        <input type="text" id="linkBadge" placeholder="ADMIN / JB / CS / SL / dll">
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeAddModal()">Batal</button>
+        <button class="btn-save" onclick="addLink()">Simpan</button>
+      </div>
+
+      <div style="margin-top:16px;display:flex;gap:8px;">
+        <button class="btn-cancel" style="flex:1;font-size:12px;" onclick="toggleEditMode()">
+          <i class="fa-solid fa-pen"></i> Mode Edit (Hapus)
+        </button>
+        <button class="btn-cancel" style="flex:1;font-size:12px;" onclick="resetLinks()">
+          <i class="fa-solid fa-rotate-left"></i> Reset
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
