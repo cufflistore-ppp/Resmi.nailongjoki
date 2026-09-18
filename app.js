@@ -2,7 +2,7 @@
 const DEFAULT_LINKS = {
   admin: [
     { id: 'a1', name: 'WA NAILONG JOKI NOPE1', desc: 'Chat admin utama Nailong Joki Elite', url: 'https://wa.me/6285124697215', badge: 'ADMIN', badgeClass: '', verified: true },
-    { id: 'a2', name: 'WA NAILONG JOKI NOPE2', desc: 'Chat admin backup Nailong Joki Elite', url: 'https://wa.me/6285745850498', badge: 'ADMIN', badgeClass: '', verified: true },
+    { id: 'a2', name: 'WA NAILONG JOKI NOPE2', desc: 'Chat admin backup Nailong Joki Elite', url: 'https://wa.me/6285134220987', badge: 'ADMIN', badgeClass: '', verified: true },
     { id: 'a3', name: 'WA CS LAPORAN MASALAH JOKI', desc: 'Bantuan customer service & laporan', url: 'https://wa.me/6285842728134', badge: 'Admin Laporan Order', badgeClass: 'laporan', verified: false },
     { id: 'a4', name: 'Website Buyer fresh [manen,bulanan,mingguan]', desc: 'svb buyer fresh [manen,bulanan,mingguan]', url: 'https://buyer-fresh-nailongjoki.vercel.app', badge: 'buyer fresh', badgeClass: 'buyer fresh', verified: false },
     { id: 'a5', name: 'Website Joki Nailong Resmi', desc: ' Order joki resmi', url: 'https://nailongjoki.vercel.app', badge: '', badgeClass: '', verified: false, icon: 'globe' }
