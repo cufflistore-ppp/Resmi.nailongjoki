@@ -15,7 +15,8 @@ const DEFAULT_LINKS = {
     { id: 's1', name: '𝗡Λ𝗜𝗟𝗢𝗡𝗚々𝗝𝗢𝗞𝗜 𝗘𝗟𝗜𝗧𝗘 | SL¹', desc: 'Saluran info, promo & pengumuman 1', url: 'https://whatsapp.com/channel/0029Vb85rHM6WaKoaWwekJ3c', badge: 'SL', badgeClass: 'sl', verified: true },
     { id: 's2', name: '𝗡Λ𝗜𝗟𝗢𝗡𝗚々𝗝𝗢𝗞𝗜 𝗘𝗟𝗜𝗧𝗘 | SL²', desc: 'Saluran info, promo & pengumuman 2', url: 'https://whatsapp.com/channel/0029Vb8bkdq4IBh6mtdFxG18', badge: 'SL', badgeClass: 'sl', verified: true },
     { id: 's3', name: '𝗡Λ𝗜𝗟𝗢𝗡𝗚々𝗝𝗢𝗞𝗜 𝗘𝗟𝗜𝗧𝗘 | SL [TEBAR JOKIAN]', desc: 'Saluran tebar jokian resmi', url: 'https://whatsapp.com/channel/0029Vb80KCH2ZjCnI4lfzh2W', badge: 'SL', badgeClass: 'sl', verified: true },
-    { id: 's4', name: '𝗡Λ𝗜𝗟𝗢𝗡𝗚々𝗝𝗢𝗞𝗜 𝗘𝗟𝗜𝗧𝗘 | SL [TEBAR JASPOST]', desc: 'Saluran tebar jaspost resmi', url: 'https://whatsapp.com/channel/0029VbDbi5o60eBZn0HMLM1q', badge: 'SL', badgeClass: 'sl', verified: true }
+    { id: 's4', name: '𝗡Λ𝗜𝗟𝗢𝗡𝗚々𝗝𝗢𝗞𝗜 𝗘𝗟𝗜𝗧𝗘 | SL [TEBAR JASPOST]', desc: 'Saluran tebar jaspost resmi', url: 'https://whatsapp.com/channel/0029VbDbi5o60eBZn0HMLM1q', badge: 'SL', badgeClass: 'sl', verified: true },
+    { id: 's5', name: '𝑻𝑶𝑶𝑳𝑺 〆 𝑵𝑨𝑰𝑳𝑶𝑵𝑮 [ SL INFO 𝑻𝑶𝑶𝑳𝑺 ]', desc:'saluran tools nailong', url: 'https://whatsapp.com/channel/0029Vb8O9WnChq6DO6DLNl1e', badge: 'SL', badgeClass: 'sl', verified: true}
   ],
   sosmed: [
     { id: 'sm1', name: 'Instagram', desc: 'Follow Instagram resmi Nailong Joki', url: 'https://instagram.com/nailongjoki', badge: 'IG', badgeClass: 'custom', verified: false, icon: 'instagram' },
@@ -57,8 +58,9 @@ function renderLinks() {
     }
 
     container.innerHTML = items.map(item => {
-      // Semua bulatan pakai foto logo
-      const iconHtml = '<img src="logo.jpg" alt="">';
+      // Item dengan kata "TOOLS" di nama pakai logo berbeda dari yang lain
+      const isTools = item.name.toUpperCase().includes('TOOLS');
+      const iconHtml = `<img src="${isTools ? 'logo-tools.jpg' : 'logo.jpg'}" alt="">`;
 
       const verifiedHtml = item.verified
         ? `<img src="secure.gif" alt="verified" style="width:16px;height:16px;vertical-align:middle;">`
