@@ -59,7 +59,7 @@ function renderLinks() {
 
     container.innerHTML = items.map(item => {
       // Item dengan kata "TOOLS" di nama pakai logo berbeda dari yang lain
-      const isTools = item.name.toUpperCase().includes('TOOLS');
+      const isTools = item.name.toUpperCase().includes('tools');
       const iconHtml = `<img src="${isTools ? 'logo-tools.jpg' : 'logo.jpg'}" alt="">`;
 
       const verifiedHtml = item.verified
